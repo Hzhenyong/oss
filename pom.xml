@@ -178,13 +178,6 @@
                 <version>${ruoyi.version}</version>
             </dependency>
 
-            <!-- 定时任务-->
-            <dependency>
-                <groupId>com.ruoyi</groupId>
-                <artifactId>ruoyi-oss</artifactId>
-                <version>4.4.0</version>
-            </dependency>
-
             <!-- 代码生成-->
             <dependency>
                 <groupId>com.ruoyi</groupId>
@@ -230,8 +223,6 @@
         <module>ruoyi-quartz</module>
         <module>ruoyi-generator</module>
         <module>ruoyi-common</module>
-        <module>ruoyi-oss</module>
-        <module>ruoyi-ai</module>
     </modules>
     <packaging>pom</packaging>
 
