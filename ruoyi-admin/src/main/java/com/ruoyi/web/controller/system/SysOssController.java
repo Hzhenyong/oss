@@ -9,17 +9,26 @@ import com.ruoyi.common.utils.file.FileUtils;
 import com.ruoyi.framework.util.ShiroUtils;
 import com.ruoyi.framework.util.ValidatorUtils;
 import com.ruoyi.framework.web.exception.user.OssException;
-import com.ruoyi.system.domain.SysOss;
+import com.ruoyi.oss.cloud.CloudConstant;
+import com.ruoyi.oss.cloud.CloudStorageConfig;
+import com.ruoyi.oss.cloud.CloudStorageService;
+import com.ruoyi.oss.cloud.OSSFactory;
+import com.ruoyi.oss.cloud.valdator.AliyunGroup;
+import com.ruoyi.oss.cloud.valdator.QcloudGroup;
+import com.ruoyi.oss.cloud.valdator.QiniuGroup;
+import com.ruoyi.oss.domain.SysOss;
+import com.ruoyi.oss.service.ISysOssService;
+
 import com.ruoyi.system.service.ISysConfigService;
-import com.ruoyi.system.service.ISysOssService;
-import com.ruoyi.web.controller.system.cloud.CloudConstant;
+
+/*import com.ruoyi.web.controller.system.cloud.CloudConstant;
 import com.ruoyi.web.controller.system.cloud.CloudConstant.CloudService;
 import com.ruoyi.web.controller.system.cloud.CloudStorageConfig;
 import com.ruoyi.web.controller.system.cloud.CloudStorageService;
 import com.ruoyi.web.controller.system.cloud.OSSFactory;
 import com.ruoyi.web.controller.system.cloud.valdator.AliyunGroup;
 import com.ruoyi.web.controller.system.cloud.valdator.QcloudGroup;
-import com.ruoyi.web.controller.system.cloud.valdator.QiniuGroup;
+import com.ruoyi.web.controller.system.cloud.valdator.QiniuGroup;*/
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,7 +54,7 @@ public class SysOssController extends BaseController
     private final static String KEY    = CloudConstant.CLOUD_STORAGE_CONFIG_KEY;
 
     @Autowired
-    private ISysOssService      sysOssService;
+    private ISysOssService sysOssService;
 
     @Autowired
     private ISysConfigService   sysConfigService;
@@ -94,17 +103,17 @@ public class SysOssController extends BaseController
     {
         // 校验类型
         ValidatorUtils.validateEntity(config);
-        if (config.getType() == CloudService.QINIU.getValue())
+        if (config.getType() == CloudConstant.CloudService.QINIU.getValue())
         {
             // 校验七牛数据
             ValidatorUtils.validateEntity(config, QiniuGroup.class);
         }
-        else if (config.getType() == CloudService.ALIYUN.getValue())
+        else if (config.getType() == CloudConstant.CloudService.ALIYUN.getValue())
         {
             // 校验阿里云数据
             ValidatorUtils.validateEntity(config, AliyunGroup.class);
         }
-        else if (config.getType() == CloudService.QCLOUD.getValue())
+        else if (config.getType() == CloudConstant.CloudService.QCLOUD.getValue())
         {
             // 校验腾讯云数据
             ValidatorUtils.validateEntity(config, QcloudGroup.class);
@@ -141,6 +150,7 @@ public class SysOssController extends BaseController
         ossEntity.setService(storage.getService());
         ossEntity.setMd5(filemd5);
         return toAjax(sysOssService.save(ossEntity)).put("url", ossEntity.getUrl()).put("fileName",ossEntity.getFileName());
+        //return toAjax(sysOssService.save(file));
     }
 
     /**

@@ -1,24 +1,20 @@
-/*
-package com.ruoyi.web.controller.system.cloud;
+package com.ruoyi.oss.cloud;
 
-import java.io.Serializable;
+
+import com.ruoyi.oss.cloud.valdator.AliyunGroup;
+import com.ruoyi.oss.cloud.valdator.QcloudGroup;
+import com.ruoyi.oss.cloud.valdator.QiniuGroup;
+import org.hibernate.validator.constraints.Range;
+import org.hibernate.validator.constraints.URL;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
+import java.io.Serializable;
 
-import org.hibernate.validator.constraints.Range;
-import org.hibernate.validator.constraints.URL;
-
-import com.ruoyi.web.controller.system.cloud.valdator.AliyunGroup;
-import com.ruoyi.web.controller.system.cloud.valdator.QcloudGroup;
-import com.ruoyi.web.controller.system.cloud.valdator.QiniuGroup;
-
-*/
 /**
  * 云存储配置信息
- *//*
-
+ */
 public class CloudStorageConfig implements Serializable
 {
     //
@@ -291,4 +287,3 @@ public class CloudStorageConfig implements Serializable
         this.qcloudRegion = qcloudRegion;
     }
 }
-*/

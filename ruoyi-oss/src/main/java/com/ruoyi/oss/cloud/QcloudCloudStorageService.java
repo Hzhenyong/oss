@@ -1,11 +1,4 @@
-/*
-package com.ruoyi.web.controller.system.cloud;
-
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-
-import org.apache.commons.io.IOUtils;
+package com.ruoyi.oss.cloud;
 
 import com.qcloud.cos.COSClient;
 import com.qcloud.cos.ClientConfig;
@@ -16,12 +9,15 @@ import com.qcloud.cos.model.PutObjectResult;
 import com.qcloud.cos.region.Region;
 import com.ruoyi.common.utils.file.FileUtils;
 import com.ruoyi.framework.web.exception.user.OssException;
+import org.apache.commons.io.IOUtils;
 
-*/
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+
 /**
  * 腾讯云存储
- *//*
-
+ */
 public class QcloudCloudStorageService extends CloudStorageService
 {
     private COSClient client;
@@ -95,4 +91,3 @@ public class QcloudCloudStorageService extends CloudStorageService
         return upload(inputStream, getPath(config.getQcloudPrefix(), suffix));
     }
 }
-*/

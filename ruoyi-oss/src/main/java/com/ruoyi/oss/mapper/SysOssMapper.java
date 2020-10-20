@@ -1,15 +1,12 @@
-/*
-package com.ruoyi.system.mapper;
+package com.ruoyi.oss.mapper;
 
 import com.ruoyi.common.core.dao.BaseMapper;
-import com.ruoyi.system.domain.SysOss;
+import com.ruoyi.oss.domain.SysOss;
 
-*/
+
 /**
  * 文件上传
- *//*
-
+ */
 public interface SysOssMapper extends BaseMapper<SysOss>
 {
 }
-*/
