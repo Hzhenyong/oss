@@ -1,3 +1,4 @@
+/*
 package com.ruoyi.web.controller.system.cloud;
 
 import java.io.ByteArrayInputStream;
@@ -6,9 +7,11 @@ import java.io.InputStream;
 import com.aliyun.oss.OSSClient;
 import com.ruoyi.framework.web.exception.user.OssException;
 
+*/
 /**
  * 阿里云存储
- */
+ *//*
+
 public class AliyunCloudStorageService extends CloudStorageService
 {
     private OSSClient client;
@@ -58,3 +61,4 @@ public class AliyunCloudStorageService extends CloudStorageService
         return upload(inputStream, getPath(config.getAliyunPrefix(), suffix));
     }
 }
+*/

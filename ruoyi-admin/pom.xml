@@ -67,6 +67,12 @@
             <artifactId>ruoyi-framework</artifactId>
         </dependency>
 
+        <!-- 存儲模块-->
+        <dependency>
+            <groupId>com.ruoyi</groupId>
+            <artifactId>ruoyi-oss</artifactId>
+        </dependency>
+
         <!-- 定时任务-->
         <dependency>
             <groupId>com.ruoyi</groupId>

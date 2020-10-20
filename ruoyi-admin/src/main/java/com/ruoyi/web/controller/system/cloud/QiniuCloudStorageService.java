@@ -1,3 +1,4 @@
+/*
 package com.ruoyi.web.controller.system.cloud;
 
 import java.io.IOException;
@@ -12,9 +13,11 @@ import com.qiniu.storage.UploadManager;
 import com.qiniu.util.Auth;
 import com.ruoyi.framework.web.exception.user.OssException;
 
+*/
 /**
  * 七牛云存储
- */
+ *//*
+
 public class QiniuCloudStorageService extends CloudStorageService
 {
     private UploadManager uploadManager;
@@ -79,3 +82,4 @@ public class QiniuCloudStorageService extends CloudStorageService
         return upload(inputStream, getPath(config.getQiniuPrefix(), suffix));
     }
 }
+*/

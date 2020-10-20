@@ -1,3 +1,4 @@
+/*
 package com.ruoyi.web.controller.system.cloud;
 
 import java.io.Serializable;
@@ -13,9 +14,11 @@ import com.ruoyi.web.controller.system.cloud.valdator.AliyunGroup;
 import com.ruoyi.web.controller.system.cloud.valdator.QcloudGroup;
 import com.ruoyi.web.controller.system.cloud.valdator.QiniuGroup;
 
+*/
 /**
  * 云存储配置信息
- */
+ *//*
+
 public class CloudStorageConfig implements Serializable
 {
     //
@@ -288,3 +291,4 @@ public class CloudStorageConfig implements Serializable
         this.qcloudRegion = qcloudRegion;
     }
 }
+*/

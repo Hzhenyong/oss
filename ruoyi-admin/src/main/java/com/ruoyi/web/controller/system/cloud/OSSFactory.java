@@ -1,3 +1,4 @@
+/*
 package com.ruoyi.web.controller.system.cloud;
 
 import com.alibaba.fastjson.JSON;
@@ -5,9 +6,11 @@ import com.ruoyi.common.utils.spring.SpringUtils;
 import com.ruoyi.system.service.ISysConfigService;
 import com.ruoyi.web.controller.system.cloud.CloudConstant.CloudService;
 
+*/
 /**
  * 文件上传Factory
- */
+ *//*
+
 public final class OSSFactory
 {
     private static ISysConfigService sysConfigService;
@@ -36,3 +39,4 @@ public final class OSSFactory
         return null;
     }
 }
+*/
