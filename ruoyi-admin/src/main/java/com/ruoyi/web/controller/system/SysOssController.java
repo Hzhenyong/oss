@@ -129,8 +129,14 @@ public class SysOssController extends BaseController
     @ResponseBody
     public AjaxResult upload(@RequestParam("file") MultipartFile file) throws Exception
     {
+        String save = sysOssService.save(file);
+        if ("1".equals(save)){
+            return AjaxResult.success("上传成功");
+        }else {
+            return  AjaxResult.warn("文件已存在,文件名为：" + save);
+        }
 
-        return toAjax(sysOssService.save(file));
+
     }
 
     /**

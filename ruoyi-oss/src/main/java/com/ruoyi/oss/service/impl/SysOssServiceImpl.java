@@ -60,7 +60,7 @@ public class SysOssServiceImpl implements ISysOssService
 
 
     @Override
-    public int save(MultipartFile file) {
+    public String save(MultipartFile file) {
         SysOss ossEntity = null;
 
         try {
@@ -70,8 +70,8 @@ public class SysOssServiceImpl implements ISysOssService
             //判断该文件在数据库中是否存在
             List<SysOss> byMd5 = findByMd5(filemd5);
             if (byMd5.size() > 0){
-                throw new RuntimeException("文件已存在文件名字为" + byMd5.get(0).getFileName());
-                //return 0;
+                //throw new RuntimeException("文件已存在文件名字为" + byMd5.get(0).getFileName());
+                return byMd5.get(0).getFileName();
             }
             String suffix = fileName.substring(fileName.lastIndexOf("."));
             CloudStorageService storage = OSSFactory.build();
@@ -89,7 +89,7 @@ public class SysOssServiceImpl implements ISysOssService
             e.printStackTrace();
         }
 
-        return save(ossEntity);
+        return String.valueOf(save(ossEntity));
     }
 
     /* (non-Javadoc)

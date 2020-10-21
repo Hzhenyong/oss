@@ -31,7 +31,7 @@ public interface ISysOssService
      * @param file
      * @return hanzhenyong
      */
-    int save(MultipartFile file);
+    String save(MultipartFile file);
 
     /**
      * @param ossId
