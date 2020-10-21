@@ -129,28 +129,8 @@ public class SysOssController extends BaseController
     @ResponseBody
     public AjaxResult upload(@RequestParam("file") MultipartFile file) throws Exception
     {
-        if (file.isEmpty())
-        {
-            throw new OssException("上传文件不能为空");
-        }
-        // 上传文件
-        String fileName = file.getOriginalFilename();
-        File newfile = FileUtils.changeFile(file);
-        String filemd5 = DigestUtils.md5Hex(new FileInputStream(newfile));
-        String suffix = fileName.substring(fileName.lastIndexOf("."));
-        CloudStorageService storage = OSSFactory.build();
-        String url = storage.uploadSuffix(file.getBytes(), suffix);
-        // 保存文件信息
-        SysOss ossEntity = new SysOss();
-        ossEntity.setUrl(url);
-        ossEntity.setFileSuffix(suffix);
-        ossEntity.setCreateBy(ShiroUtils.getLoginName());
-        ossEntity.setFileName(fileName);
-        ossEntity.setCreateTime(new Date());
-        ossEntity.setService(storage.getService());
-        ossEntity.setMd5(filemd5);
-        return toAjax(sysOssService.save(ossEntity)).put("url", ossEntity.getUrl()).put("fileName",ossEntity.getFileName());
-        //return toAjax(sysOssService.save(file));
+
+        return toAjax(sysOssService.save(file));
     }
 
     /**

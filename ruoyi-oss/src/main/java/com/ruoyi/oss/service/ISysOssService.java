@@ -3,6 +3,7 @@ package com.ruoyi.oss.service;
 
 
 import com.ruoyi.oss.domain.SysOss;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
@@ -26,11 +27,25 @@ public interface ISysOssService
     int save(SysOss ossEntity);
 
     /**
+     *
+     * @param file
+     * @return hanzhenyong
+     */
+    int save(MultipartFile file);
+
+    /**
      * @param ossId
      * @return
      * @author zmr
      */
     SysOss findById(Long ossId);
+
+    /**
+     *
+     * @param ossMd5
+     * @return
+     */
+    List<SysOss> findByMd5(String ossMd5);
 
     /**
      * @param sysOss
