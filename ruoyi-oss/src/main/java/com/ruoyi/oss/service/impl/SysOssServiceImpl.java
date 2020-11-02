@@ -18,13 +18,7 @@ public class SysOssServiceImpl implements ISysOssService
     @Autowired
     private SysOssMapper sysOssMapper;
 
-    /*
-     * (non-Javadoc)
-     * 
-     * @see
-     * com.zmr.wind.modules.sys.service.ISysOssService#getList(com.zmr.wind.
-     * modules.sys.entity.SysOss)
-     */
+
     @Override
     public List<SysOss> getList(SysOss sysOss)
     {

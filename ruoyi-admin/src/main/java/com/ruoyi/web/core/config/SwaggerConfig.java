@@ -45,7 +45,7 @@ public class SwaggerConfig
                 // 详细定制
                 .apiInfo(apiInfo()).select().apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class))
                 // 指定当前包路径
-                // .apis(RequestHandlerSelectors.basePackage("com.ruoyi.web.controller.tool"))
+                .apis(RequestHandlerSelectors.basePackage("com.ruoyi.web.controller"))
                 // .apis(basePackage("com.ruoyi.web.controller.system,com.ruoyi.web.controller.tool"))
                 // 扫描所有 .apis(RequestHandlerSelectors.any())
                 .paths(PathSelectors.any()).build();

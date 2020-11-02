@@ -231,6 +231,7 @@
         <module>ruoyi-generator</module>
         <module>ruoyi-common</module>
         <module>ruoyi-oss</module>
+        <module>ruoyi-ai</module>
     </modules>
     <packaging>pom</packaging>
 

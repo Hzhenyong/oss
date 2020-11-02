@@ -146,3 +146,13 @@ xss:
 swagger:
   # 是否开启swagger
   enabled: true
+
+config:
+  face:
+    arcface-sdk:
+      sdk-lib-path: d:/arcsoft_lib
+      app-id: FZWwpWYBnfAAbp3eK5oDpfcAdg3Lsv2iKB1tbkwnXmuV
+      sdk-key: EURu8LRSrQZkgiU3LscwdqH66UmFnNZ8BQhqSX2KiNEW
+      detect-pool-size: 5
+      compare-pool-size: 5
+
